@@ -7,8 +7,11 @@ export const resolvers = {
     company: (_, { id }) => Company.findById(id)
   },
   Mutation: {
-    createJob: (_, { title, companyId, description }) => {
-      return Job.create({ title, companyId, description })
+    createJob: (_, { input }) => {
+      return Job.create(input)
+    },
+    deleteJob: (_, { id }) => {
+      return Job.delete(id)
     }
   },
   Company: {
