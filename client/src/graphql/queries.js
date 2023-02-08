@@ -11,8 +11,8 @@ export async function createJob(input) {
       }
     }
   `;
-  const variables = { input }
-  const headers = { 'Authorization': 'Bearer ' + getAccessToken() }
+  const variables = { input };
+  const headers = { 'Authorization': 'Bearer ' + getAccessToken() };
   const { job } = await request(GRAPHQL_URL, query, variables, headers);
   return job;
 }
@@ -30,7 +30,7 @@ export async function getJob(id) {
       }
     }
   `;
-  const variables = { id }
+  const variables = { id };
   const { job } = await request(GRAPHQL_URL, query, variables);
   return job;
 }
@@ -65,7 +65,7 @@ export async function getCompany(id) {
       }
     }
   `;
-  const variables = { id }
+  const variables = { id };
   const { company } = await request(GRAPHQL_URL, query, variables);
   return company;
 }
